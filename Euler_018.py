@@ -1,6 +1,6 @@
 def run():
     rows = []
-    FILE = open("67triangle.txt", "r")
+    FILE = open("18triangle.txt")
     for row in FILE: rows.append([int(i) for i in row.split(" ")])
     print(len(rows))
     for i in range(len(rows)-2,-1,-1):

@@ -15,7 +15,7 @@ import math
 
 def oddtri(n):
     tri = math.floor((n+1)/2)
-    total = (tri*tri+1)-1
+    total = tri*tri
     print(total)
     return(total)
     
@@ -28,4 +28,4 @@ def run(m):
     return(count)
 
 if __name__ == "__main__":
-    print(run(18))
+    print(run(50))

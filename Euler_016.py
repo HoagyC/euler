@@ -6,6 +6,7 @@ def run():
     fac = str(2**1000)
     dig = [int(fac[x]) for x in range(len(fac))]
     return(sum(dig))
+    print("hi mum")
 
 if __name__ == "__main__":
     print(run())

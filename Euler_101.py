@@ -18,20 +18,15 @@ def getCoeff(x,seq):
     return coeff
 
 def findbest(x,seq):
-    print (seq,'bb')
-    currentseq = seq
-    print(seq,'d')
+    print (seq)
+    currentseq = seq[:]
     for i in range(x):
         b = getCoeff(x-i,currentseq)
-        print(seq,'e')
         for j in range(len(seq)):
-            print(seq,'g')
             currentseq[j] -= b*((j+1)**(x-i-1))
-            print(seq,'h')
-        print(seq,'f')
-    print(seq,'c')
-    prediction = [j-i for i,j in zip(seq,currentseq)]
-    return(currentseq[x])
+
+    prediction = [i-j for i,j in zip(seq,currentseq)]
+    return (prediction[x])
 
 def run(n):
     total = 0
@@ -39,9 +34,9 @@ def run(n):
     # seq = getseq(n)
     for j in range(n):
         seq.append((j+1)**3)
-    print(seq,"aaaa")
+    print(seq)
     for i in range(1,n):
-        add = seq[i]-findbest(i,seq)
+        add = findbest(i,seq)
         total += add
     return (total)
-print(run(4))
+print(run(10))

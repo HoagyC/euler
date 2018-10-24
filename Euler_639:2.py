@@ -23,14 +23,13 @@ def run(n,p):
                 # keeps dividing by the found factor as long as possible
                 k/=primes[j]
             if k < (primes[j]**2-1) or j==pl:
-                
                 break
             j+=1
         if k>1:
             # primes can only have one prime factor above sqrt(n)
             # after removing all lower prime factors, this is what remains
             factors.append(int(k))
-        for m in range(2,p+1):
+        for m in range(1,p+1):
             # add calculates the multiplicative function for power m, s.t. modulo
             add=1
             for j in range(len(factors)):
@@ -48,7 +47,6 @@ def getPrimes(n):
         if numbers[i] != 0:
             for j in range(numbers[i]+i,len(numbers),numbers[i]):
                 numbers[j] = 0
-    print('got primes')
     return(list(filter(lambda x: x,numbers)))
     
-run(int(1e12),50)
+run(100,1)
